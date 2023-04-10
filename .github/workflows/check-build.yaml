@@ -1,0 +1,23 @@
+name: Check build
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - run: yarn --frozen-lockfile
+      - run: yarn build
