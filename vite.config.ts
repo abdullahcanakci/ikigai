@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { VitePluginNode } from 'vite-plugin-node';
+import path from 'path';
 
 export default defineConfig({
     // ...vite configures
@@ -8,6 +9,11 @@ export default defineConfig({
       port: 3000
     },
     build: {
+    },
+    resolve: {
+      alias: {
+        '@Lib': path.resolve(__dirname, './src/lib'),
+      },
     },
     plugins: [
         ...VitePluginNode({

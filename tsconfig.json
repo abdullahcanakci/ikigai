@@ -1,5 +1,9 @@
 {
+  
     "compilerOptions": {
+      "paths": {
+        "@Lib/*": ["./src/lib/*"],
+      },
       "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
       "target": "ES5",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
       "module": "ES2022",                                /* Specify what module code is generated. */
